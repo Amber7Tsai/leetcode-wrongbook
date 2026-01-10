@@ -39,3 +39,13 @@ while fast < n:            # same as: for (fast = 0; fast < n; fast++)
         slow += 1                # then move write pointer
     fast += 1                    # move read pointer (for-loop increment)
 return slow
+
+
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        slow = 0
+        for fast in range (len(nums)):
+            if nums[fast] != val:
+                nums[slow] = nums[fast]
+                slow += 1
+        return slow
